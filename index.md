@@ -6,9 +6,12 @@ _Are you looking for my [Final Fantasy Randomizer tools](https://devonwcorwin.gi
 
 ## Welcome!
 
-Hi! My name is Devon, and I'm a freelance translator with more than ten years of experience. 
+Hi! My name is Devon, and I'm a freelance translator with more than ten years of experience.
+
 In my time as a translator, I've worked with a variety of media including short stories, television, 
 musicals, tabletop RPGs, and video games, but the bulk of my experience has been with manga.
+
+I have a strong grasp of English, and render dialogue in a natural, read-out-loudable style.
 
 ### My work
 
