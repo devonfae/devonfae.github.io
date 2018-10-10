@@ -62,7 +62,7 @@ These are just a small number of examples of my work.
 
 <p style="display:block;text-align:center;">
   <a href="/assets/summer-02-136-7.jpg"><img title="Volume 2, pages 136 and 137" src="/assets/thumb/summer-02-136-7.jpg"></a>
-<p>
+</p>
 
 #### B-Ball Goddess!
 
