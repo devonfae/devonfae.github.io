@@ -17,7 +17,9 @@ These are just a small number of examples of my work.
 
 #### Cardcaptor Sakura: Clear Card
 
-[![Volume 2, pages 134 and 135](/assets/thumb/ccscc-02-134-5.jpg)](/assets/ccscc-02-134-5.jpg)
+<p style="display:block;text-align:center;">
+  <a href="/assets/ccscc-02-134-5.jpg"><img src="/assets/thumb/ccscc-02-134-5.jpg" title="Volume 2, pages 134 and 135"></a>
+</p>
 
 [![Volume 2, pages 136 and 137](/assets/thumb/ccscc-02-136-7.jpg)](/assets/ccscc-02-136-7.jpg)
 
