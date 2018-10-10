@@ -25,16 +25,32 @@ These are just a small number of examples of my work.
 
 ### Our Precious Conversations
 
-aaa
+[![Chapter 19, pages 14 and 15](/assets/thumb/bokutokimi-019-14-5.jpg)](/assets/bokutokimi-019-14-5.jpg)
+
+[![Chapter 19, pages 16 and 17](/assets/thumb/bokutokimi-019-16-7.jpg)](/assets/bokutokimi-019-16-7.jpg)
+
+[![Chapter 19, pages 18 and 19](/assets/thumb/bokutokimi-019-18-9.jpg)](/assets/bokutokimi-019-18-9.jpg)
 
 ### Those Summer Days
 
-aaa
+[![Volume 2, pages 130 and 131](/assets/thumb/summer-02-130-1.jpg)](/assets/summer-02-130-1.jpg)
+
+[![Volume 2, pages 132 and 133](/assets/thumb/summer-02-132-3.jpg)](/assets/summer-02-132-3.jpg)
+
+[![Volume 2, pages 134 and 135](/assets/thumb/summer-02-134-5.jpg)](/assets/summer-02-134-5.jpg)
+
+[![Volume 2, pages 136 and 137](/assets/thumb/summer-02-136-7.jpg)](/assets/summer-02-136-7.jpg)
 
 ### B-Ball Goddess!
 
-aaa
+[![Chapter 23, pages 12 and 13](/assets/thumb/bball-023-12-3.jpg)](/assets/bball-023-12-3.jpg)
+
+[![Chapter 23, pages 14 and 15](/assets/thumb/bball-023-14-5.jpg)](/assets/bball-023-14-5.jpg)
+
+[![Chapter 23, pages 16 and 17](/assets/thumb/bball-023-16-7.jpg)](/assets/bball-023-16-7.jpg)
 
 ### Love's Reach
 
-aaa
+[![Volume 9, pages 166 and 167](/assets/thumb/lovesreach-09-166-7.jpg)](/assets/lovesreach-09-166-7.jpg)
+
+[![Volume 9, pages 168 and 169](/assets/thumb/lovesreach-09-168-9.jpg)](/assets/lovesreach-09-168-9.jpg)
