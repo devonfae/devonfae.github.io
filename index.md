@@ -8,15 +8,15 @@ _Are you looking for my [Final Fantasy Randomizer tools](https://devonwcorwin.gi
 
 Hi! My name is Devon, and I'm a freelance translator with more than ten years of experience.
 
-In my time as a translator, I've worked with a variety of media including short stories, television, 
-musicals, tabletop RPGs, and video games, but the bulk of my experience has been with manga.
+In my time as a translator, I've worked with a variety of media, including short stories, live-action television, 
+musicals, animation, tabletop RPGs, and video games, but the bulk of my experience has been with manga.
 
-I have a strong grasp of English, and render dialogue in a natural, read-out-loudable style.
+I have a strong command of the English language, and it shows in my writing. In particular, I write dialogue in a natural, read-out-loudable style.
 
 ### My work
 
 I've done work for a number of clients across many genres, targeting both print and digital. 
-These are just a small number of examples of my work.
+Check out a few examples of my work below. If you like what you see, don't hesitate to contact me to discuss your current or future projects.
 
 #### Cardcaptor Sakura: Clear Card
 
