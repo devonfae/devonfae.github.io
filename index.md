@@ -17,7 +17,11 @@ These are just a small number of examples of my work.
 
 ### Cardcaptor Sakura: Clear Card
 
-aaa
+![Volume 2, pages 134 and 135](/assets/thumbs/ccscc-02-134-5.jpg)
+
+![Volume 2, pages 136 and 137](/assets/thumbs/ccscc-02-136-7.jpg)
+
+![Volume 2, pages 138 and 139](/assets/thumbs/ccscc-02-138-9.jpg)
 
 ### Our Precious Conversations
 
