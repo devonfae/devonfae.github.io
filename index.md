@@ -2,9 +2,8 @@
 layout: default
 title: Devon Corwin, freelance translator
 ---
-<div style="width: auto;">
-  _Are you looking for my [Final Fantasy Randomizer tools](https://devonwcorwin.github.io/fftracker/)?_
-</div>
+_Are you looking for my [Final Fantasy Randomizer tools](https://devonwcorwin.github.io/fftracker/)?_
+
 # Welcome!
 
 Hi! My name is Devon, and I'm a freelance translator with more than ten years of experience. 
