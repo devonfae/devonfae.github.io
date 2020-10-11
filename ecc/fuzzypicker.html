@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./fuzzypicker.css">
+    <title>Fuzzy Logic schedule picker !</title>
+</head>
+<body>
+<div id="tablediv">
+  <table id="schedule">
+  </table>
+</div>
+<div id="rollerdiv">
+  <div id="rollerwrapper">
+  </div>
+</div>
+<div id="controldiv">
+  <p>
+    <button onclick="moveFirstToEnd()">Start Roll</button> 
+    <button onclick="practiceRoll()">Stop Roll</button>
+    <button onclick="revealNextRow()">Go Back</button> 
+    <button onclick="revealNextRow()">Skip Ahead</button> 
+  </p>
+</div>
+<div id="infodiv">
+  <p id="info">
+  </p>
+</div>
+</body>
+<script src="fuzzypicker.js"></script>
+</html>

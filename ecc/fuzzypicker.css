@@ -1,0 +1,84 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+body {
+  background-color: black;
+  background-image: url("./ecc-bg-8color.png");
+  color: #F8F8FF;
+  font-family: "Arial Bold", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  width: 70%;
+}
+
+th, td {
+  padding: 4px;
+}
+
+th {
+  background-color: rgba(60, 60, 60, 1);
+  color: #00BAFF;
+  font-size: 1.2em;
+  position: sticky;
+  top: 0;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(120, 120, 160, 0.7);
+}
+tbody tr:nth-child(even) {
+  background-color: rgba(60, 60, 60, 0.7);
+}
+
+tbody tr{
+  visibility: collapse;
+}
+
+
+#tablediv {
+  height: 25%;
+  overflow: hidden;
+  position: relative;
+}
+table {
+  position: absolute;
+  bottom: 0;
+}
+#controldiv {
+  height: 5%;
+  text-align: center;
+}
+#rollerdiv {
+  height: 35%;
+  position: relative;
+  overflow: hidden;
+}
+#infodiv {
+  height: 35%;
+}
+#info {
+  background-color: rgba(60, 60, 60, 0.7);
+  font-size: 1.2em;
+  padding: 12px;
+  height: 100%;
+  line-height: 1.35em;
+}
+#title {
+  font-size: 1.5em;
+}
+#rollerwrapper {
+  position: relative;
+  top: 0px;
+}
+.rolleritem {
+  width: 70%;
+  margin: auto;
+  padding: 8px;
+  text-align: center;
+  font-size: 2em;
+  border: 1px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+}
