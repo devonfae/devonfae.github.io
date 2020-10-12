@@ -95,7 +95,7 @@ const fakelist = [
   "Final Fantasy Summons Arm Wrestling Bracket predictions",
   "I Am Going To Acquire Points",
   "Destiny 2 (100%)",
-  "Beatmania IIDX Infinitas as a remixing tool (notes chosen for sound, ignoring note chart)",
+  "Beatmania IIDX Infinitas as a musical instrument",
   "Boardgame Rating (By Taste of Meeple)",
   "Starcraft / Warcraft 3 1p1c ladder matches",
   "Dramatic reading of the Bee Movie script",
@@ -106,19 +106,53 @@ const fakelist = [
   "Supportive Funky Kong calls you poggers (ASMR) (LARP)",
   "Twitch Plays Street Fighter IV",
   "Let’s play Progress Quest",
-  "Super Mario Bros but each time you jump the window gets smaller",
+  "Super Mario Bros but each time you jump the window shrinks",
   "Let’s Read the EULA",
   "Let’s play Super Mario Bros backwards",
   "Let’s go on a nature hike (periscope stream)",
   "Let’s read the Human Genome",
   "101 crimes you could be committing right now",
   "There was only one bed (live fic writing)",
-  "Enjoy the beautiful Norwegian landscapes aboard the renowned Nordland Line (Nordlandsbanen)",
+  "Enjoy the beautiful Norwegian landscapes aboard the Nordlandsbanen",
   "Demonstrating an algorithm for creating a marathon schedule",
   "Sin and Punishment N64 co-op mode",
   "SNOOPING AS USUAL I SEE (10 hrs)",
   "Teaching dogs poker (no limit hold-em)",
   "Let’s Dub a live tennis match",
+  "Kaizo TASes scored as Olympic gymnastics routines",
+  "Write a song on DK Jungle Beat Bongos",
+  "Twitch presents: 4’33” remixes",
+  "Cake baking: Any% No Flour",
+  "Real Estate Brokering In Monster Infested Realms",
+  "Hamtaro Educational Game- Chat Learn%",
+  "Video Game Starting Screen Mash-Ups",
+  "Idle Dice Roll Until we Get a Yahtzee", 
+  "Running with Scissors Low%",
+  "VVVVVVery Good Fan-Made Levels",
+  "VVVVVVery Goni Odce",
+  "Brainstorming Live a Live sequel ('Dead b Dead')",
+  "Watch_C4TS",
+  "Acquiring Prime Scores in Super Mario Bros 3",
+  "Hey You! Pikachu (Otomatone only run)",
+  "Hades RBO (We just play Dante's Inferno)",
+  "Hey I Bet I Could Get This In The Trash Can From Here",
+  "Switch Cartridge Taste Test",
+  "Identifying Famous Works of Art from Quite a Long Way Away (no glasses%)",
+  "My Bird Sucks At Seaman",
+  "Cat Pictures slideshow",
+  "Ranking 150 Gen 1 Pokemon by Fuzziness",
+  "Among Us Any%",
+  "Civilization 1–6 six games one controller",
+  "Defining the Metroidvania",
+  "Let’s Listen to the Red Army Choir",
+  "Grinding to level 99 on slimes while I play unfitting music",
+  "A list of EarthBound enemies I’d like to have as a mom someday",
+  "Let’s Watch all 44 Super Sentai openings in order",
+  "Let’s Watch Pretty Guardian Sailormoon at 10x speed",
+  "Tetris NES any% pacifist WR attempts",
+  "Cloudwatching but with analog TV static",
+  "Let’s figure out how to land this thing before the fuel runs out",
+  "Twitch orders pizza (channel points to bid on toppings)",
 ];
 
 
@@ -225,6 +259,13 @@ function addRiggedItem() {
 
 function getRandomFakeIdea() {
   let i = Math.floor((Math.random() * fakelist.length));
+  let tries = 8;
+  while ((lastfakenumbers.includes(i)) && (tries > 0)) {
+    i = Math.floor((Math.random() * fakelist.length));
+    tries--;
+  }
+  lastfakenumbers.push(i);
+  lastfakenumbers.shift();
   return fakelist[i];
 }
 
@@ -312,7 +353,7 @@ function intercept(){
   if (velocity < 0) {
     clearInterval(animation);
     win();
-  } else if (velocity < 100) {
+  } else if (velocity < 120) {
     velocity -= 1;
   }
   wrapper.style.top = top + "px";
@@ -324,9 +365,9 @@ function intercept(){
 let flashcounter = 0;
 function win(){
   flashcounter = 4;
-  let ff = Math.floor(Math.random()*9)+1;
+  let ff = Math.floor(Math.random()*12)+1;
   document.getElementById("fanfare"+ff).play();
-  animation = setInterval(flash, 500);
+  animation = setInterval(flash, 400);
 }
 
 function flash(){
