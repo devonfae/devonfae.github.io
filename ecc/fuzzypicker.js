@@ -146,7 +146,8 @@ function generateTable(table, data) {
   }
 }
 
-let wrapper = document.getElementById("rollerwrapper");
+const wrapper = document.getElementById("rollerwrapper");
+let symbolcounter = 8;
 
 function generateRoller() {
   for (let i = 0; i < 9; i++){
@@ -156,22 +157,70 @@ function generateRoller() {
 
 function makeTextFit(entry) {
   entry.style.fontSize = "2em";
+  entry.style.width = "700px";
   while (entry.clientWidth < entry.scrollWidth){
     let f = parseFloat(entry.style.fontSize);
-    f = f - 0.1;
+    f = f - 0.05;
     entry.style.fontSize = f + "em";
-  }
+  };
+  entry.style.width = "800px";
 };
 
 function addRollerItem() {
-  let att = document.createAttribute("class");
-  att.value = "rolleritem";
   let entry = document.createElement("div");
   let entrytext = document.createTextNode(getRandomFakeIdea());
   entry.appendChild(entrytext);
-  entry.setAttributeNode(att);
+  entry.classList.add("rolleritem");
+  switch (symbolcounter){
+    case 2:
+      entry.classList.add("q");
+      break;
+    case 4:
+      entry.classList.add("nice");
+      break;
+    case 6:
+      entry.classList.add("q");
+      break;
+    case 8:
+      entry.classList.add("good");
+      symbolcounter = 0;
+      break;
+    default:
+      entry.classList.add("donk");
+  }
+  symbolcounter++;
   entry = wrapper.appendChild(entry);
   makeTextFit(entry);
+}
+
+let winningitem;
+function addRiggedItem() {
+  let entry = document.createElement("div");
+  let entrytext = document.createTextNode(schedule[currentrow].title);
+  entry.appendChild(entrytext);
+  entry.classList.add("rolleritem");
+  entry.classList.add("winningitem");
+  switch (symbolcounter){
+    case 2:
+      entry.classList.add("q");
+      break;
+    case 4:
+      entry.classList.add("nice");
+      break;
+    case 6:
+      entry.classList.add("q");
+      break;
+    case 8:
+      entry.classList.add("good");
+      symbolcounter = 0;
+      break;
+    default:
+      entry.classList.add("donk");
+  }
+  symbolcounter++;
+  entry = wrapper.appendChild(entry);
+  makeTextFit(entry);
+  winningitem = entry;
 }
 
 function getRandomFakeIdea() {
@@ -180,24 +229,142 @@ function getRandomFakeIdea() {
 }
 
 function moveFirstToEnd(){
+  document.getElementById("tick1").currentTime=0;
+  document.getElementById("tick1").play();
   let child = wrapper.firstElementChild;
   let wrapperTop = parseInt(wrapper.offsetTop);
   let childHeight = parseInt(child.offsetHeight);
-  console.log(wrapper.offsetTop);
-  console.log("top: " + wrapperTop + ", height: " + childHeight);
+  if (!child.classList.contains("winningitem")) addRollerItem();
   child.remove();
-  wrapper.appendChild(child);
   wrapper.style.top = (wrapperTop + childHeight) + "px";
 }
 
-function practiceRoll(){
-  
+let animation;
+function startRoll(){
+  clearInterval(animation);
+  document.getElementById("spinbutton").style.display = "none";
+  document.getElementById("waitbutton").style.display = "inline-block";
+  animation = setInterval(rollUp, 10);
+}
+
+function stopRoll(){
+  clearInterval(animation);
+  atmax = false;
+  document.getElementById("stopbutton").style.display = "none";
+  document.getElementById("waitbutton").style.display = "inline-block";
+  deceleration = Math.random() / 2;
+  animation = setInterval(rollDown, 10);
+}
+
+let subpixel = 0;
+let velocity = 0;
+let maxv = 1500;
+let atmax = false;
+let acceleration = 20;
+let deceleration;
+
+function rollUp(){
+  let top = parseInt(wrapper.offsetTop);
+  subpixel += velocity;
+  let dx = Math.floor(subpixel/100);
+  subpixel -= 100*dx;
+  top -= dx;
+  if (!atmax) {
+    velocity += acceleration;
+    if (velocity > maxv) {
+      velocity = maxv;
+      atmax = true;
+      document.getElementById("waitbutton").style.display = "none";
+      document.getElementById("stopbutton").style.display = "inline-block";
+    }
+  }
+  wrapper.style.top = top + "px";
+  if (top < -100) {
+    moveFirstToEnd();
+  }
+}
+
+function rollDown(){
+  let top = parseInt(wrapper.offsetTop);
+  subpixel += velocity;
+  let dx = Math.floor(subpixel/100);
+  subpixel -= 100*dx;
+  top -= dx;
+  velocity = velocity*(0.99+(deceleration/100)) - 1;
+  if (velocity < 380) {
+    clearInterval(animation);
+    addRiggedItem();
+    animation = setInterval(intercept, 10);
+  }
+  wrapper.style.top = top + "px";
+  if (top < -100) {
+    moveFirstToEnd();
+  }
+}
+
+function intercept(){
+  let top = parseInt(wrapper.offsetTop);
+  subpixel += velocity;
+  let dx = Math.floor(subpixel/100);
+  subpixel -= 100*dx;
+  top -= dx;
+  velocity = velocity - 2;
+  if (velocity < 0) {
+    clearInterval(animation);
+    win();
+  } else if (velocity < 100) {
+    velocity -= 1;
+  }
+  wrapper.style.top = top + "px";
+  if (top < -100) {
+    moveFirstToEnd();
+  }
+}
+
+let flashcounter = 0;
+function win(){
+  flashcounter = 4;
+  let ff = Math.floor(Math.random()*9)+1;
+  document.getElementById("fanfare"+ff).play();
+  animation = setInterval(flash, 500);
+}
+
+function flash(){
+  switch (flashcounter){
+    case 4:
+      winningitem.classList.add("winblue");
+      break;
+    case 3:
+      winningitem.classList.remove("winblue");
+      winningitem.classList.add("winpink");
+      break;
+    case 2:
+      winningitem.classList.remove("winblue");
+      winningitem.classList.add("winblue");
+      break;
+    case 1:
+      winningitem.classList.remove("winblue");
+      winningitem.classList.add("winpink");
+      break;
+    case 0:
+      winningitem.classList.remove("winpink");
+      clearInterval(animation);
+      revealNextRow();
+  }
+  flashcounter--;
 }
 
 let lastfakenumbers = [0,0,0,0,0,0,0,0,0];
 
 let currentrow = 0;
+
 function revealNextRow(){
+  clearInterval(animation);
+  velocity = 0;
+  atmax = false;
+  document.getElementById("waitbutton").style.display = "none";
+  document.getElementById("stopbutton").style.display = "none";
+  document.getElementById("spinbutton").style.display = "inline-block";
   let p = document.getElementById("info");
   if (currentrow < schedule.length && currentrow >= 0){
     let current = schedule[currentrow];
@@ -206,12 +373,37 @@ function revealNextRow(){
         "Presenter: " + current.runner + "<br />" + 
         current.time + " on " + current.day + " for " + current.estimate + "<br /><br />" +
         current.description;
+    table.getElementsByTagName("tr")[currentrow+1].style.visibility = "visible";
     currentrow++;
-    table.getElementsByTagName("tr")[currentrow].style.visibility = "visible";
   } else {
     p.innerHTML = "That's it!";  
   }
 }
+
+function goBack(){
+  clearInterval(animation);
+  velocity = 0;
+  atmax = false;
+  document.getElementById("waitbutton").style.display = "none";
+  document.getElementById("stopbutton").style.display = "none";
+  document.getElementById("spinbutton").style.display = "inline-block";
+  let p = document.getElementById("info");
+  if (currentrow > 1){
+	currentrow--;
+    table.getElementsByTagName("tr")[currentrow+1].style.visibility = "collapse";
+    let current = schedule[currentrow-1];
+    p.innerHTML =
+        "<span id='title'>" + current.title + "</span><br />" + 
+        "Presenter: " + current.runner + "<br />" + 
+        current.time + " on " + current.day + " for " + current.estimate + "<br /><br />" +
+        current.description;
+  } else {
+    currentrow = 0;
+    table.getElementsByTagName("tr")[currentrow+1].style.visibility = "collapse";
+    p.innerHTML = "That's it!";  
+  }
+}
+
 const table = document.getElementById("schedule");
 generateTable(table, schedule); // generate the table first
 generateTableHead(table); // then the head

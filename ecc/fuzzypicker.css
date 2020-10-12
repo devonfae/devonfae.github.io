@@ -5,7 +5,7 @@ html, body {
 }
 body {
   background-color: black;
-  background-image: url("./ecc-bg-8color.png");
+  background-image: url("./img/ecc-bg-8color.png");
   color: #F8F8FF;
   font-family: "Arial Bold", Arial, sans-serif;
   font-weight: bold;
@@ -47,16 +47,89 @@ table {
   bottom: 0;
 }
 #controldiv {
-  height: 5%;
+  height: 100px;
+  margin: auto;
   text-align: center;
+  overflow: visible;
 }
+#spinbutton {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  height: 108px;
+  width: 300px;
+  background-image: url(./img/spin-1-100.png);
+}
+#spinbutton:hover {
+  background-image: url(./img/spin-2-100.png);
+}
+#spinbutton:active {
+  background-image: url(./img/spin-3-100.png);
+}
+#stopbutton {
+  display: none;
+  position: relative;
+  z-index: 2;
+  height: 108px;
+  width: 300px;
+  background-image: url(./img/stop-1-100.png);
+}
+#stopbutton:hover {
+  background-image: url(./img/stop-2-100.png);
+}
+#stopbutton:active {
+  background-image: url(./img/stop-3-100.png);
+}
+#waitbutton {
+  display: none;
+  position: relative;
+  z-index: 2;
+  height: 108px;
+  width: 300px;
+  background-image: url(./img/wait-100.png);
+}
+
+#backbutton {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  left: 15px;
+  height: 108px;
+  width: 59px;
+  background-image: url(./img/back-100.png);
+}
+#skipbutton {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  left: -15px;
+  height: 108px;
+  width: 59px;
+  background-image: url(./img/fore-100.png);
+}
+
+
+
 #rollerdiv {
-  height: 35%;
+  height: 250px;
   position: relative;
   overflow: hidden;
 }
+#rollerdiv::before {
+  content: url(./img/right-arrow.gif);
+  position: absolute;
+  top: 100px;
+  left: 0px;
+}
+#rollerdiv::after {
+  content: url(./img/left-arrow.gif);
+  position: absolute;
+  top: 100px;
+  right: 0px;
+}
 #infodiv {
   height: 35%;
+  margin-top: -10px;
 }
 #info {
   background-color: rgba(60, 60, 60, 0.7);
@@ -73,12 +146,53 @@ table {
   top: 0px;
 }
 .rolleritem {
-  width: 70%;
+  width: 800px;
   margin: auto;
-  padding: 8px;
+  padding: 4px;
+  height: 48px;
+  line-height: 48px;
   text-align: center;
   font-size: 2em;
   border: 1px solid white;
   white-space: nowrap;
   overflow: hidden;
+}
+.q::before {
+  content: url(./img/q-48.png);
+  float: left;
+}
+.q::after {
+  content: url(./img/q-48.png);
+  float: right;
+}
+.good::before {
+  content: url(./img/good-48.png);
+  float: left;
+}
+.good::after {
+  content: url(./img/good-48.png);
+  float: right;
+}
+.nice::before {
+  content: url(./img/nice-48.png);
+  float: left;
+}
+.nice::after {
+  content: url(./img/nice-48.png);
+  float: right;
+}
+.donk::before {
+  content: url(./img/donk-48.png);
+  float: left;
+}
+.donk::after {
+  content: url(./img/donk-48.png);
+  float: right;
+}
+
+.winpink {
+  background-color: #f62bf3;
+}
+.winblue {
+  background-color: #2af0f1;
 }

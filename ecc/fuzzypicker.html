@@ -15,17 +15,56 @@
   </div>
 </div>
 <div id="controldiv">
-  <p>
-    <button onclick="moveFirstToEnd()">Start Roll</button> 
-    <button onclick="practiceRoll()">Stop Roll</button>
+  <div id="backbutton" onclick="goBack()"></div>
+  <div id="spinbutton" onclick="startRoll()"></div>
+  <div id="waitbutton"></div>
+  <div id="stopbutton" onclick="stopRoll()"></div>
+  <div id="skipbutton" onclick="revealNextRow()"></div>
+    <!--<button onclick="startRoll()">Start Roll</button> 
+    <button onclick="stopRoll()">Stop Roll</button>
     <button onclick="revealNextRow()">Go Back</button> 
-    <button onclick="revealNextRow()">Skip Ahead</button> 
-  </p>
+    <button onclick="revealNextRow()">Skip Ahead</button>--> 
 </div>
 <div id="infodiv">
   <p id="info">
+    <span id='title'>Welcome to the Fuzzy Logic Schedule-O-Matic!</span>
+    <br /><br />
+    Press the button to begin!
   </p>
 </div>
+<audio id="tick1">
+  <source src="./sounds/tick1.mp3" type="audio/mpeg">
+</audio>
+<audio id="tick2">
+  <source src="./sounds/tick2.wav" type="audio/wav">
+</audio>
+<audio id="fanfare1">
+  <source src="./sounds/fanfare1.mp3" type="audio/mpeg">
+</audio>
+<audio id="fanfare2">
+  <source src="./sounds/fanfare2.wav" type="audio/wav">
+</audio>
+<audio id="fanfare3">
+  <source src="./sounds/fanfare3.wav" type="audio/wav">
+</audio>
+<audio id="fanfare4">
+  <source src="./sounds/fanfare4.wav" type="audio/wav">
+</audio>
+<audio id="fanfare5">
+  <source src="./sounds/fanfare5.wav" type="audio/wav">
+</audio>
+<audio id="fanfare6">
+  <source src="./sounds/fanfare6.mp3" type="audio/mpeg">
+</audio>
+<audio id="fanfare7">
+  <source src="./sounds/fanfare7.mp3" type="audio/mpeg">
+</audio>
+<audio id="fanfare8">
+  <source src="./sounds/fanfare8.ogg" type="audio/ogg">
+</audio>
+<audio id="fanfare9">
+  <source src="./sounds/fanfare9.ogg" type="audio/ogg">
+</audio>
 </body>
 <script src="fuzzypicker.js"></script>
 </html>
