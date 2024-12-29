@@ -1,4 +1,4 @@
-import {LitElement, html} from 'lit-core.min.js';
+import {LitElement, html} from './lit-core.min.js';
 
 export class MoreExpressions extends LitElement {
   static properties = {
